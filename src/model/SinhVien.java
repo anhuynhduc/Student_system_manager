@@ -4,7 +4,7 @@ package model;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class HocVien implements Serializable {
+public class SinhVien implements Serializable {
 
     private String ma_hoc_vien;
     private String ho_ten;

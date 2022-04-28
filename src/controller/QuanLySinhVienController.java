@@ -20,33 +20,33 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import model.HocVien;
-import service.HocVienService;
-import service.HocVienServiceImpl;
+import model.SinhVien;
+import service.SinhVienServiceImpl;
 import utility.ClassTableModel;
-import view.HocVienJFrame;
+import view.SinhVienJFrame;
+import service.SinhVienService;
 
-public class QuanLyHocVienController {
+public class QuanLySinhVienController {
     private JPanel jpnView;
     private JButton btnAdd;
     private JTextField jtfSearch;
     
-    private HocVienService hocVienService = null;
+    private SinhVienService hocVienService = null;
     
     private String[] listColumn = {"Mã Khách Hàng", "STT", "Tên Khách Hàng", "Ngày sinh",
         "Giới tính", "Số điện thoại", "Địa chỉ", "Trạng thái"};
     
     private TableRowSorter<TableModel> rowSorter = null;
     
-    public QuanLyHocVienController(JPanel jpnView, JButton btnAdd, JTextField jtfSearch) {
+    public QuanLySinhVienController(JPanel jpnView, JButton btnAdd, JTextField jtfSearch) {
         this.jpnView = jpnView;
         this.btnAdd = btnAdd;
         this.jtfSearch = jtfSearch;
-        this.hocVienService = new HocVienServiceImpl();
+        this.hocVienService = new SinhVienServiceImpl();
     }
     
     public void setDataToTable() {
-        List<HocVien> listItem = hocVienService.getList();
+        List<SinhVien> listItem = hocVienService.getList();
         
         DefaultTableModel model = new ClassTableModel().setTableHocVien(listItem, listColumn);
         JTable table = new JTable(model);
@@ -98,7 +98,7 @@ public class QuanLyHocVienController {
                   selectedRowIndex = table.convertRowIndexToModel(selectedRowIndex);
                   System.out.println(selectedRowIndex);
                   
-                  HocVien hocVien = new HocVien();
+                  SinhVien hocVien = new SinhVien();
                   hocVien.setMa_hoc_vien((String) model.getValueAt(selectedRowIndex,0)) ;
                   hocVien.setHo_ten(model.getValueAt(selectedRowIndex,2).toString());
                   
@@ -110,7 +110,7 @@ public class QuanLyHocVienController {
                           model.getValueAt(selectedRowIndex, 6).toString() : "");
                   hocVien.setTinh_trang((Boolean) model.getValueAt(selectedRowIndex,7));
                   
-                  HocVienJFrame frame = new HocVienJFrame(hocVien);
+                  SinhVienJFrame frame = new SinhVienJFrame(hocVien);
                   frame.setTitle("Thông tin học viên");
                   frame.setResizable(false);
                   frame.setLocationRelativeTo(null);
@@ -139,7 +139,7 @@ public class QuanLyHocVienController {
             btnAdd.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
-                HocVienJFrame frame = new HocVienJFrame(new HocVien());
+                SinhVienJFrame frame = new SinhVienJFrame(new SinhVien());
                 frame.setTitle("Thông Tin Học Viên");
                 frame.setLocationRelativeTo(null);
                 frame.setResizable(false);

@@ -13,9 +13,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
-import model.HocVien;
-import service.HocVienService;
-import service.HocVienServiceImpl;
+import model.SinhVien;
+import service.SinhVienServiceImpl;
+import service.SinhVienService;
 
 
 
@@ -23,7 +23,7 @@ import service.HocVienServiceImpl;
  *
  * @author Admin
  */
-public class HocVienController {
+public class SinhVienController {
     private JButton btnSubmit;
     private JTextField jtfMaHocVien;
     private JTextField jtfHoTen;
@@ -35,11 +35,11 @@ public class HocVienController {
     private JCheckBox jcbTinhTrang;
     private JLabel jlbMsg;
     
-    private HocVien hocVien = null;
+    private SinhVien hocVien = null;
     
-    private HocVienService hocVienService = null;
+    private SinhVienService hocVienService = null;
     
-    public HocVienController(JButton btnSubmit, JTextField jtfMaHocVien, JTextField jtfHoTen,
+    public SinhVienController(JButton btnSubmit, JTextField jtfMaHocVien, JTextField jtfHoTen,
             JDateChooser jdcNgaySinh, JTextField jtfSoDienThoai, JRadioButton jtfGioiNam, JRadioButton jtfNu,
             JTextArea jtaDiaChi, JCheckBox jcbTinhTrang, JLabel jlbMsg){
         this.btnSubmit = btnSubmit;
@@ -53,10 +53,10 @@ public class HocVienController {
         this.jcbTinhTrang = jcbTinhTrang;
         this.jlbMsg = jlbMsg;
         
-        this.hocVienService = new HocVienServiceImpl();
+        this.hocVienService = new SinhVienServiceImpl();
     }
     
-    public void setView(HocVien hocVien) {
+    public void setView(SinhVien hocVien) {
         this.hocVien = hocVien;
         jtfMaHocVien.setText("#" + hocVien.getMa_hoc_vien());
         jtfHoTen.setText(hocVien.getHo_ten());

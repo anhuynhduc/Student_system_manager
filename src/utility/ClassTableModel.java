@@ -3,11 +3,11 @@ package utility;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import model.HocVien;
+import model.SinhVien;
 
 
 public class ClassTableModel {
-    public DefaultTableModel setTableHocVien(List<HocVien> listItem, String[] listColumn) {
+    public DefaultTableModel setTableHocVien(List<SinhVien> listItem, String[] listColumn) {
         DefaultTableModel dtm = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -25,7 +25,7 @@ public class ClassTableModel {
         int rows = listItem.size();
         if(rows > 0){
             for (int i = 0; i < rows; i++) {
-            HocVien hocVien = listItem.get(i);
+            SinhVien hocVien = listItem.get(i);
             obj = new Object[columns];
             obj[0] = hocVien.getMa_hoc_vien();
             obj[1] = (i + 1);

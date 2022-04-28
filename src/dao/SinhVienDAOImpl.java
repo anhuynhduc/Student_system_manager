@@ -7,20 +7,20 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import model.HocVien;
+import model.SinhVien;
 
-public class HocVienDAOImpl implements HocVienDAO {
+public class SinhVienDAOImpl implements SinhVienDAO {
 
     @Override
-    public List<HocVien> getList() {
+    public List<SinhVien> getList() {
         try {
             Connection cons = (Connection) DBConnect.getConnection();
             String sql = "SELECT * FROM hoc_vien";
-            List<HocVien> list = new ArrayList<>();
+            List<SinhVien> list = new ArrayList<>();
             PreparedStatement ps = (PreparedStatement) cons.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                HocVien hocVien = new HocVien();
+                SinhVien hocVien = new SinhVien();
                 hocVien.setMa_hoc_vien(rs.getString("ma_hoc_vien"));
                 hocVien.setHo_ten(rs.getString("ho_ten"));
                 hocVien.setSo_dien_thoai(rs.getString("so_dien_thoai"));
@@ -41,7 +41,7 @@ public class HocVienDAOImpl implements HocVienDAO {
     }
     
     @Override
-    public int createOrUpdate(HocVien hocVien) {
+    public int createOrUpdate(SinhVien hocVien) {
         try {
             Connection cons = DBConnect.getConnection();
             String sql = "MERGE INTO hoc_vien AS t\n" +
@@ -77,7 +77,7 @@ public class HocVienDAOImpl implements HocVienDAO {
     }
     
     public static void main(String[] args){
-        HocVienDAO hocVienDAO = new HocVienDAOImpl();
+        SinhVienDAO hocVienDAO = new SinhVienDAOImpl();
         System.out.println(hocVienDAO.getList());
     }
 

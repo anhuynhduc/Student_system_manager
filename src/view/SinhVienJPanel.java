@@ -1,15 +1,15 @@
 
 package view;
 
-import controller.QuanLyHocVienController;
+import controller.QuanLySinhVienController;
 
 
-public class HocVienJPanel extends javax.swing.JPanel {
+public class SinhVienJPanel extends javax.swing.JPanel {
 
   
-    public HocVienJPanel() {
+    public SinhVienJPanel() {
         initComponents();
-        QuanLyHocVienController controller = new QuanLyHocVienController(jpnView, btnAdd, jtfSearch);
+        QuanLySinhVienController controller = new QuanLySinhVienController(jpnView, btnAdd, jtfSearch);
         controller.setDataToTable();
         controller.setEvent();
     }

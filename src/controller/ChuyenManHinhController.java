@@ -9,7 +9,7 @@ import java.awt.event.MouseListener;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import view.HocVienJPanel;
+import view.SinhVienJPanel;
 import view.KhoaHocJPanel;
 import view.ThongKeJPanel;
 import view.TrangChuJPanel;
@@ -65,7 +65,7 @@ public class ChuyenManHinhController {
                     node = new TrangChuJPanel();
                     break;
                 case "HocVien":
-                    node = new HocVienJPanel();
+                    node = new SinhVienJPanel();
                     break;
                 case "KhoaHoc":
                     node = new KhoaHocJPanel();

@@ -1,24 +1,24 @@
 
 package view;
 
-import controller.HocVienController;
+import controller.SinhVienController;
 
-import model.HocVien;
+import model.SinhVien;
 
 
-public class HocVienJFrame extends javax.swing.JFrame {
+public class SinhVienJFrame extends javax.swing.JFrame {
 
     
-    public HocVienJFrame(HocVien hocVien) {
+    public SinhVienJFrame(SinhVien hocVien) {
         initComponents();
         
-        HocVienController controller = new HocVienController(btnSubmit, jtfMaHocVien, jtfHoTen,
+        SinhVienController controller = new SinhVienController(btnSubmit, jtfMaHocVien, jtfHoTen,
                 jdcNgaySinh, jtfSoDienThoai, jrdNam, jrdNu, jtaDiaChi, jcbTinhTrang, jlbMsg);
         controller.setView(hocVien);
         controller.setEvent();
     }
 
-    public HocVienJFrame() {
+    public SinhVienJFrame() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

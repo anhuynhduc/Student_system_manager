@@ -59,14 +59,14 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpnMenu.setBackground(new java.awt.Color(82, 83, 81));
+        jpnMenu.setBackground(new java.awt.Color(0, 82, 122));
 
         jPanel5.setBackground(new java.awt.Color(232, 64, 60));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_ung_dung_white_24dp.png"))); // NOI18N
-        jLabel1.setText("QUẢN LÝ SINH VIÊN");
+        jLabel1.setText("MENU");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -85,7 +85,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpnTrangChu.setBackground(new java.awt.Color(76, 175, 60));
+        jpnTrangChu.setBackground(new java.awt.Color(204, 204, 204));
 
         jlbTrangChu.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbTrangChu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -109,7 +109,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpnHocVien.setBackground(new java.awt.Color(76, 175, 60));
+        jpnHocVien.setBackground(new java.awt.Color(204, 204, 204));
 
         jlbHocVien.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbHocVien.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -133,7 +133,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpnThongKe.setBackground(new java.awt.Color(76, 175, 60));
+        jpnThongKe.setBackground(new java.awt.Color(204, 204, 204));
 
         jlbThongKe.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbThongKe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -184,7 +184,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap(339, Short.MAX_VALUE))
         );
 
-        jpnView.setBackground(new java.awt.Color(204, 255, 255));
+        jpnView.setBackground(new java.awt.Color(0, 82, 122));
 
         javax.swing.GroupLayout jpnViewLayout = new javax.swing.GroupLayout(jpnView);
         jpnView.setLayout(jpnViewLayout);

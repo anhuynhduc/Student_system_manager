@@ -8,7 +8,7 @@ public class LopHoc implements Serializable {
 
     private int ma_lop_hoc;
     private KhoaHoc khoaHoc;
-    private HocVien hocVien;
+    private SinhVien hocVien;
     private Date ngay_dang_ky;
     private boolean tinh_trang;
 
@@ -28,11 +28,11 @@ public class LopHoc implements Serializable {
         this.khoaHoc = khoaHoc;
     }
 
-    public HocVien getHocVien() {
+    public SinhVien getHocVien() {
         return hocVien;
     }
 
-    public void setHocVien(HocVien hocVien) {
+    public void setHocVien(SinhVien hocVien) {
         this.hocVien = hocVien;
     }
 
