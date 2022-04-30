@@ -33,7 +33,7 @@ public class QuanLySinhVienController {
     
     private SinhVienService hocVienService = null;
     
-    private String[] listColumn = {"Mã Khách Hàng", "STT", "Tên Khách Hàng", "Ngày sinh",
+    private String[] listColumn = {"Mã Sinh Viên", "STT", "Tên Sinh Viên", "Ngày sinh",
         "Giới tính", "Số điện thoại", "Địa chỉ", "Trạng thái"};
     
     private TableRowSorter<TableModel> rowSorter = null;
