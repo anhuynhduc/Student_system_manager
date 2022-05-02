@@ -98,7 +98,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jlbTrangChu.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbTrangChu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlbTrangChu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/man_hinh_chinh.png"))); // NOI18N
-        jlbTrangChu.setText("Màn Hình Chính");
+        jlbTrangChu.setText("Trang Chủ");
 
         javax.swing.GroupLayout jpnTrangChuLayout = new javax.swing.GroupLayout(jpnTrangChu);
         jpnTrangChu.setLayout(jpnTrangChuLayout);
@@ -106,8 +106,8 @@ public class MainJFrame extends javax.swing.JFrame {
             jpnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnTrangChuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlbTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(jlbTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jpnTrangChuLayout.setVerticalGroup(
             jpnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
