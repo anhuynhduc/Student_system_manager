@@ -439,7 +439,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="0" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="V/v t&#x1ed5; ch&#x1ee9;c ti&#xea;m vaccine cho sinh vi&#xea;n &#x110;H&#x110;N"/>
+                <Property name="text" type="java.lang.String" value="V/v t&#x1ed5; ch&#x1ee9;c ti&#xea;m vaccine cho sinh vi&#xea;n &#x110;H&#x110;N "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel29">
@@ -459,7 +459,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel31">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Updated: 02/04/2022  9:00"/>
+                <Property name="text" type="java.lang.String" value="Updated: 03/04/2022  9:00"/>
               </Properties>
             </Component>
           </SubComponents>
