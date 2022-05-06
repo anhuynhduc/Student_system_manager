@@ -85,6 +85,6 @@ public class ThongKeJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jpnRoot;
     private javax.swing.JPanel jpnView1;
     private javax.swing.JPanel jpnView2;
-    //// End of variables declaration//GEN-END:variables
+    // End of variables declaration//GEN-END:variables
     
 }
