@@ -27,6 +27,7 @@ public class SinhVienController {
     private JButton btnSubmit;
     private JTextField jtfMaHocVien;
     private JTextField jtfHoTen;
+    private JTextField jtfTenLopHoc;
     private JDateChooser jdcNgaySinh;
     private JTextField jtfSoDienThoai;
     private JRadioButton jtfNam;
@@ -39,12 +40,20 @@ public class SinhVienController {
     
     private SinhVienService hocVienService = null;
     
-    public SinhVienController(JButton btnSubmit, JTextField jtfMaHocVien, JTextField jtfHoTen,
+    /**
+     *
+     * @param btnSubmit
+     * @param jtfMaHocVien
+     * @param jtfHoTen
+     * @param jtfTenLopHoc
+     */
+    public SinhVienController(JButton btnSubmit, JTextField jtfMaHocVien, JTextField jtfHoTen,JTextField jtfTenLopHoc,
             JDateChooser jdcNgaySinh, JTextField jtfSoDienThoai, JRadioButton jtfGioiNam, JRadioButton jtfNu,
             JTextArea jtaDiaChi, JCheckBox jcbTinhTrang, JLabel jlbMsg){
         this.btnSubmit = btnSubmit;
         this.jtfMaHocVien = jtfMaHocVien;
         this.jtfHoTen = jtfHoTen;
+        this.jtfTenLopHoc = jtfTenLopHoc;
         this.jdcNgaySinh = jdcNgaySinh;
         this.jtfSoDienThoai = jtfSoDienThoai;
         this.jtfNam = jtfNam;
@@ -55,11 +64,20 @@ public class SinhVienController {
         
         this.hocVienService = new SinhVienServiceImpl();
     }
+
+    public SinhVienController(JButton btnSubmit, JTextField jtfMaHocVien, JTextField jtfHoTen, JDateChooser jdcNgaySinh, JTextField jtfSoDienThoai, JRadioButton jrdNam, JRadioButton jrdNu, JTextArea jtaDiaChi, JCheckBox jcbTinhTrang, JLabel jlbMsg) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public SinhVienController(JButton btnSubmit, JTextField jtfMaHocVien, JTextField jtfHoTen, JTextField jtfTenLopHoc) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public void setView(SinhVien hocVien) {
         this.hocVien = hocVien;
         jtfMaHocVien.setText("#" + hocVien.getMa_hoc_vien());
         jtfHoTen.setText(hocVien.getHo_ten());
+        jtfTenLopHoc.setText(hocVien.getTen_lop_hoc());
         jdcNgaySinh.setDate(hocVien.getNgay_sinh());
         
         //if (hocVien.isGioi_tinh()) {
@@ -82,6 +100,7 @@ public class SinhVienController {
                     jlbMsg.setText("Vui lòng nhập dữ liệu bắt buộc");
                 }else{
                         hocVien.setHo_ten(jtfHoTen.getText());
+                        hocVien.setTen_lop_hoc(jtfTenLopHoc.getText());
                         hocVien.setNgay_sinh(covertDateToDateSql(jdcNgaySinh.getDate()));
                         hocVien.setSo_dien_thoai(jtfSoDienThoai.getText());
                         hocVien.setDia_chi(jtaDiaChi.getText());

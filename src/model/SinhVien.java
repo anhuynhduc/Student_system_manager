@@ -8,6 +8,7 @@ public class SinhVien implements Serializable {
 
     private String ma_hoc_vien;
     private String ho_ten;
+    private String ten_lop_hoc;
     private String so_dien_thoai;
     private String dia_chi;
     private Date ngay_sinh;
@@ -28,6 +29,14 @@ public class SinhVien implements Serializable {
 
     public void setHo_ten(String ho_ten) {
         this.ho_ten = ho_ten;
+    }
+    
+    public String getTen_lop_hoc() {
+        return ten_lop_hoc;
+    }
+
+    public void setTen_lop_hoc(String ten_lop_hoc) {
+        this.ten_lop_hoc = ten_lop_hoc;
     }
 
     public String getSo_dien_thoai() {

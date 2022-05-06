@@ -7,6 +7,7 @@ import java.sql.Date;
 public class LopHoc implements Serializable {
 
     private int ma_lop_hoc;
+    private String ten_lop_hoc;
     private KhoaHoc khoaHoc;
     private SinhVien hocVien;
     private Date ngay_dang_ky;
@@ -18,6 +19,14 @@ public class LopHoc implements Serializable {
 
     public void setMa_lop_hoc(int ma_lop_hoc) {
         this.ma_lop_hoc = ma_lop_hoc;
+    }
+    
+    public String getTen_lop_hoc() {
+        return ten_lop_hoc;
+    }
+
+    public void setTen_lop_hoc(String ten_lop_hoc) {
+        this.ten_lop_hoc = ten_lop_hoc;
     }
 
     public KhoaHoc getKhoaHoc() {
