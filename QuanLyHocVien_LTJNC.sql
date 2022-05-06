@@ -8,6 +8,7 @@ create table hoc_vien
 (
 	ma_hoc_vien varchar(7) NOT NULL primary key,
 	ho_ten nvarchar(50),
+	ten_lop_hoc varchar(50),
 	ngay_sinh date ,
 	gioi_tinh bit NOT NULL,
 	so_dien_thoai varchar(11),
@@ -29,6 +30,7 @@ go
 create table lop_hoc
 (
 	ma_lop_hoc varchar(7) NOT NULL primary key,
+	ten_lop_hoc nvarchar(50),
 	ma_hoc_vien varchar(7),
 	ma_khoa_hoc varchar(7),
 	ngay_dang_ky date,
@@ -61,8 +63,8 @@ add constraint CK_Date_khoa_hoc CHECK(ngay_bat_dau < ngay_ket_thuc )
 go 
 
 INSERT INTO hoc_vien 
-	values('1896251',N'Võ Lê Nhật Huy','03/16/2002','1','0858998155','Da Nang','1'),
-		  ('1896252',N'Hồ Nguyễn Gia Bảo','02/14/2002','1','0851451212','Da Nang','1')
+	values('1896251',N'Võ Lê Nhật Huy','20T1','03/16/2002','1','0858998155','Da Nang','1'),
+		  ('1896252',N'Hồ Nguyễn Gia Bảo','20T2','02/14/2002','1','0851451212','Da Nang','1')
 
 GO
 INSERT INTO khoa_hoc
@@ -70,8 +72,8 @@ INSERT INTO khoa_hoc
 			('KH00002','BACK-END',N'Thiết kế cơ sở dữ liệu','07/23/2022','12/23/2022','0')
 go
 INSERT INTO lop_hoc
-	values ('LH00001','1896251','KH00001','04/20/2022','1'),
-			('LH00002','1896252','KH00002','06/29/2022','0')
+	values ('LH00001','20T1','1896251','KH00001','04/20/2022','1'),
+			('LH00002','20T2','1896252','KH00002','06/29/2022','0')
 			
 go 
 INSERT INTO tai_khoan
