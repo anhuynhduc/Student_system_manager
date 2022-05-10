@@ -25,10 +25,12 @@ import service.SinhVienServiceImpl;
 import utility.ClassTableModel;
 import view.SinhVienJFrame;
 import service.SinhVienService;
+import view.XoaSinhVienJFrame;
 
 public class QuanLySinhVienController {
     private JPanel jpnView;
     private JButton btnAdd;
+    private JButton btnRemove;
     private JTextField jtfSearch;
     
     private SinhVienService hocVienService = null;
@@ -38,9 +40,10 @@ public class QuanLySinhVienController {
     
     private TableRowSorter<TableModel> rowSorter = null;
     
-    public QuanLySinhVienController(JPanel jpnView, JButton btnAdd, JTextField jtfSearch) {
+    public QuanLySinhVienController(JPanel jpnView, JButton btnAdd,JButton btnRemove, JTextField jtfSearch) {
         this.jpnView = jpnView;
         this.btnAdd = btnAdd;
+        this.btnRemove = btnRemove;
         this.jtfSearch = jtfSearch;
         this.hocVienService = new SinhVienServiceImpl();
     }
@@ -115,6 +118,13 @@ public class QuanLySinhVienController {
                   frame.setResizable(false);
                   frame.setLocationRelativeTo(null);
                   frame.setVisible(true);
+                  
+                  XoaSinhVienJFrame frame1 = new XoaSinhVienJFrame(hocVien);
+                  frame1.setTitle("Thông tin học viên");
+                  frame1.setResizable(false);
+                  frame1.setLocationRelativeTo(null);
+                  frame1.setVisible(true);
+                  
               }
         }    
         });
@@ -154,6 +164,27 @@ public class QuanLySinhVienController {
             @Override
             public void mouseExited(MouseEvent e) {
                 btnAdd.setBackground(new Color(100, 221, 23));
+            }
+        });
+            
+            btnRemove.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                XoaSinhVienJFrame frame1 = new XoaSinhVienJFrame(new SinhVien());
+                frame1.setTitle("Thông Tin Học Viên Cần Xoá");
+                frame1.setLocationRelativeTo(null);
+                frame1.setResizable(false);
+                frame1.setVisible(true);
+            }
+            
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                btnRemove.setBackground(new Color(0, 200, 83));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                btnRemove.setBackground(new Color(100, 221, 23));
             }
         });
         

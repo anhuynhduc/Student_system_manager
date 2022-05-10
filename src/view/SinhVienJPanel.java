@@ -9,7 +9,7 @@ public class SinhVienJPanel extends javax.swing.JPanel {
   
     public SinhVienJPanel() {
         initComponents();
-        QuanLySinhVienController controller = new QuanLySinhVienController(jpnView, btnAdd, jtfSearch);
+        QuanLySinhVienController controller = new QuanLySinhVienController(jpnView, btnAdd, btnRemove ,jtfSearch);
         controller.setDataToTable();
         controller.setEvent();
     }

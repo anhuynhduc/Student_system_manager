@@ -23,5 +23,10 @@ public class SinhVienServiceImpl implements SinhVienService {
     public int createOrUpdate(SinhVien hocVien) {
         return hocVienDAO.createOrUpdate(hocVien);
     }
+    
+    @Override
+    public int deleteOrUpdate(SinhVien hocVien) {
+        return hocVienDAO.deleteOrUpdate(hocVien);
+    }
 
 }
