@@ -75,7 +75,7 @@ public class SinhVienController {
     
     public void setView(SinhVien hocVien) {
         this.hocVien = hocVien;
-        jtfMaHocVien.setText("#" + hocVien.getMa_hoc_vien());
+        jtfMaHocVien.setText(hocVien.getMa_hoc_vien());
         jtfHoTen.setText(hocVien.getHo_ten());
         jtfTenLopHoc.setText(hocVien.getTen_lop_hoc());
         jdcNgaySinh.setDate(hocVien.getNgay_sinh());
@@ -94,43 +94,6 @@ public class SinhVienController {
     
     public void setEvent() {
         btnSubmit.addMouseListener(new MouseAdapter(){
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                if(jtfHoTen.getText().length() == 0 || jdcNgaySinh.getDate() == null){
-                    jlbMsg.setText("Vui lòng nhập dữ liệu bắt buộc");
-                }else{
-                        hocVien.setHo_ten(jtfHoTen.getText());
-                        hocVien.setTen_lop_hoc(jtfTenLopHoc.getText());
-                        hocVien.setNgay_sinh(covertDateToDateSql(jdcNgaySinh.getDate()));
-                        hocVien.setSo_dien_thoai(jtfSoDienThoai.getText());
-                        hocVien.setDia_chi(jtaDiaChi.getText());
-                        //hocVien.setGioi_tinh(jtfNam.isSelected());
-                        hocVien.setTinh_trang(jcbTinhTrang.isSelected());
-                        int lastId = hocVienService.createOrUpdate(hocVien);
-                        if (lastId > 0) {
-                        hocVien.setMa_hoc_vien(lastId);
-                        jtfMaHocVien.setText("#" + lastId);
-                        jlbMsg.setText("Xử lý cập nhật dữ liệu thành công!");
-                        }
-                }
-            }
-            
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                btnSubmit.setBackground(new Color(0, 200, 83));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                btnSubmit.setBackground(new Color(100, 221, 23));
-            }
-
-            private java.sql.Date covertDateToDateSql(Date d) {
-                return new java.sql.Date(d.getTime());
-            }
-        });
-        
-        btnSubmit.removeMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(jtfHoTen.getText().length() == 0 || jdcNgaySinh.getDate() == null){

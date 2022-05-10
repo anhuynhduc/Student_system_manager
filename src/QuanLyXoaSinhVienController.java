@@ -1,6 +1,7 @@
 
-package controller;
 
+
+import controller.*;
 import java.util.List;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -27,10 +28,9 @@ import view.SinhVienJFrame;
 import service.SinhVienService;
 import view.XoaSinhVienJFrame;
 
-public class QuanLySinhVienController {
+public class QuanLyXoaSinhVienController {
     private JPanel jpnView;
-    private JButton btnAdd;
-    private JTextField jtfSearch;
+    private JButton btnRemove;
     
     private SinhVienService hocVienService = null;
     
@@ -39,10 +39,9 @@ public class QuanLySinhVienController {
     
     private TableRowSorter<TableModel> rowSorter = null;
     
-    public QuanLySinhVienController(JPanel jpnView, JButton btnAdd , JTextField jtfSearch) {
+    public QuanLyXoaSinhVienController(JPanel jpnView,JButton btnRemove) {
         this.jpnView = jpnView;
-        this.btnAdd = btnAdd;
-        this.jtfSearch = jtfSearch;
+        this.btnRemove = btnRemove;
         this.hocVienService = new SinhVienServiceImpl();
     }
     
@@ -54,33 +53,7 @@ public class QuanLySinhVienController {
 
         rowSorter = new TableRowSorter<>(table.getModel());
         table.setRowSorter(rowSorter);
-        
-        jtfSearch.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                String text = jtfSearch.getText();
-                if (text.trim().length() == 0) {
-                    rowSorter.setRowFilter(null);
-                } else {
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
-                }
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                 String text = jtfSearch.getText();
-                if (text.trim().length() == 0) {
-                    rowSorter.setRowFilter(null);
-                } else {
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
-                }
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                
-            }
-            });
+       
         // design
         table.getColumnModel().getColumn(0).setMinWidth(0);
         table.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -102,23 +75,9 @@ public class QuanLySinhVienController {
                   SinhVien hocVien = new SinhVien();
                   hocVien.setMa_hoc_vien((String) model.getValueAt(selectedRowIndex,1)) ;
                   hocVien.setHo_ten(model.getValueAt(selectedRowIndex,2).toString());
-                  hocVien.setTen_lop_hoc(model.getValueAt(selectedRowIndex,3).toString());
-                  //hocVien.setNgay_sinh(ngay_sinh);
-                  hocVien.setGioi_tinh(model.getValueAt(selectedRowIndex,5).toString().equalsIgnoreCase("Nam"));
-                  hocVien.setSo_dien_thoai(model.getValueAt(selectedRowIndex,6) != null ?
-                          model.getValueAt(selectedRowIndex, 6).toString() : "");
-                  hocVien.setDia_chi(model.getValueAt(selectedRowIndex,7).toString() != null ?
-                          model.getValueAt(selectedRowIndex, 7).toString() : "");
-                  hocVien.setTinh_trang((Boolean) model.getValueAt(selectedRowIndex,8));
-                  
-                  SinhVienJFrame frame = new SinhVienJFrame(hocVien);
-                  frame.setTitle("Thông tin học viên");
-                  frame.setResizable(false);
-                  frame.setLocationRelativeTo(null);
-                  frame.setVisible(true);
                   
                   XoaSinhVienJFrame frame1 = new XoaSinhVienJFrame(hocVien);
-                  frame1.setTitle("Thông tin học viên Cần Xoá");
+                  frame1.setTitle("Thông tin học viên cần xoá");
                   frame1.setResizable(false);
                   frame1.setLocationRelativeTo(null);
                   frame1.setVisible(true);
@@ -144,24 +103,25 @@ public class QuanLySinhVienController {
     }
         
         public void setEvent(){
-            btnAdd.addMouseListener(new MouseAdapter(){
+            
+            btnRemove.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
-                SinhVienJFrame frame = new SinhVienJFrame(new SinhVien());
-                frame.setTitle("Thông Tin Sinh Viên");
-                frame.setLocationRelativeTo(null);
-                frame.setResizable(false);
-                frame.setVisible(true);
+                XoaSinhVienJFrame frame1 = new XoaSinhVienJFrame(new SinhVien());
+                frame1.setTitle("Thông Tin Học Viên Cần Xoá");
+                frame1.setLocationRelativeTo(null);
+                frame1.setResizable(false);
+                frame1.setVisible(true);
             }
             
             @Override
             public void mouseEntered(MouseEvent e) {
-                btnAdd.setBackground(new Color(0, 200, 83));
+                btnRemove.setBackground(new Color(0, 200, 83));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                btnAdd.setBackground(new Color(100, 221, 23));
+                btnRemove.setBackground(new Color(100, 221, 23));
             }
         });
         

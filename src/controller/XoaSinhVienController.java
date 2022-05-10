@@ -52,7 +52,7 @@ public class XoaSinhVienController {
     
     public void setView(SinhVien hocVien) {
         this.hocVien = hocVien;
-        jtfMaHocVien.setText("#" + hocVien.getMa_hoc_vien());
+        jtfMaHocVien.setText(hocVien.getMa_hoc_vien());
         
     }
     
@@ -60,13 +60,8 @@ public class XoaSinhVienController {
         btnSubmit1.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
-                        int lastId = hocVienService.deleteOrUpdate(hocVien);
-                        if (lastId > 0) {
-                        hocVien.setMa_hoc_vien(lastId);
-                        jtfMaHocVien.setText("#" + lastId);
+                         hocVienService.deleteOrUpdate(hocVien);
                         jlbMsg.setText("Xử lý cập nhật dữ liệu thành công!");
-                       
-                }
             }
             
             @Override
