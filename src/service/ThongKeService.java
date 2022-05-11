@@ -4,11 +4,8 @@ package service;
 import bean.KhoaHocBean;
 import bean.LopHocBean;
 import java.util.List;
+import java.awt.Color;
 
-/**
- *
- * @author Admin
- */
 public interface ThongKeService {
     
     public List<LopHocBean> getListByLopHoc();

@@ -15,7 +15,7 @@ public class ClassTableModel {
             }
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                return columnIndex == 7 ? Boolean.class : String.class;
+                return columnIndex == 8 ? Boolean.class : String.class;
             }
         };
     
@@ -27,14 +27,15 @@ public class ClassTableModel {
             for (int i = 0; i < rows; i++) {
             SinhVien hocVien = listItem.get(i);
             obj = new Object[columns];
-            obj[0] = hocVien.getMa_hoc_vien();
-            obj[1] = (i + 1);
+            obj[0] = (i + 1);
+            obj[1] = hocVien.getMa_hoc_vien();
             obj[2] = hocVien.getHo_ten();
-            obj[3] = hocVien.getNgay_sinh();
-            obj[4] = hocVien.isGioi_tinh() == true ? "Nam" : "Nữ";
-            obj[5] = hocVien.getSo_dien_thoai();
-            obj[6] = hocVien.getDia_chi();
-            obj[7] = hocVien.isTinh_trang();
+            obj[3] = hocVien.getTen_lop_hoc();
+            obj[4] = hocVien.getNgay_sinh();
+            obj[5] = hocVien.isGioi_tinh() == true ? "Nam" : "Nữ";
+            obj[6] = hocVien.getSo_dien_thoai();
+            obj[7] = hocVien.getDia_chi();
+            obj[8] = hocVien.isTinh_trang();
             dtm.addRow(obj);
         }
         }

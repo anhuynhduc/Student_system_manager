@@ -33,7 +33,7 @@ public class QuanLySinhVienController {
     
     private SinhVienService hocVienService = null;
     
-    private String[] listColumn = {"Mã Sinh Viên", "STT", "Tên Sinh Viên", "Ngày sinh",
+    private String[] listColumn = {"STT", "MSV", "Tên Sinh Viên","Tên Lớp Học", "Ngày sinh",
         "Giới tính", "Số điện thoại", "Địa chỉ", "Trạng thái"};
     
     private TableRowSorter<TableModel> rowSorter = null;
@@ -99,16 +99,16 @@ public class QuanLySinhVienController {
                   System.out.println(selectedRowIndex);
                   
                   SinhVien hocVien = new SinhVien();
-                  hocVien.setMa_hoc_vien((String) model.getValueAt(selectedRowIndex,0)) ;
+                  hocVien.setMa_hoc_vien((String) model.getValueAt(selectedRowIndex,1)) ;
                   hocVien.setHo_ten(model.getValueAt(selectedRowIndex,2).toString());
-                  
+                  hocVien.setTen_lop_hoc(model.getValueAt(selectedRowIndex,3).toString());
                   //hocVien.setNgay_sinh(ngay_sinh);
-                  hocVien.setGioi_tinh(model.getValueAt(selectedRowIndex,4).toString().equalsIgnoreCase("Nam"));
-                  hocVien.setSo_dien_thoai(model.getValueAt(selectedRowIndex,5) != null ?
-                          model.getValueAt(selectedRowIndex, 5).toString() : "");
-                  hocVien.setDia_chi(model.getValueAt(selectedRowIndex,6).toString() != null ?
+                  hocVien.setGioi_tinh(model.getValueAt(selectedRowIndex,5).toString().equalsIgnoreCase("Nam"));
+                  hocVien.setSo_dien_thoai(model.getValueAt(selectedRowIndex,6) != null ?
                           model.getValueAt(selectedRowIndex, 6).toString() : "");
-                  hocVien.setTinh_trang((Boolean) model.getValueAt(selectedRowIndex,7));
+                  hocVien.setDia_chi(model.getValueAt(selectedRowIndex,7).toString() != null ?
+                          model.getValueAt(selectedRowIndex, 7).toString() : "");
+                  hocVien.setTinh_trang((Boolean) model.getValueAt(selectedRowIndex,8));
                   
                   SinhVienJFrame frame = new SinhVienJFrame(hocVien);
                   frame.setTitle("Thông tin học viên");

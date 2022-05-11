@@ -214,15 +214,20 @@ public class TrangChuJPanel extends javax.swing.JPanel {
         jPanel10.setBackground(new java.awt.Color(153, 153, 255));
 
         jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+<<<<<<< HEAD
         jLabel28.setForeground(new java.awt.Color(0, 0, 204));
         jLabel28.setText("V/v tổ chức tiêm vaccine cho sinh viên ĐHĐN");
+=======
+        jLabel28.setForeground(new java.awt.Color(51, 0, 102));
+        jLabel28.setText("V/v tổ chức tiêm vaccine cho sinh viên ĐHĐN ");
+>>>>>>> d9207ec3b88cf7a8bf52b6b17de696465e9230b3
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrow.png"))); // NOI18N
 
         jLabel30.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel30.setText("Căn cứ Công văn Hoả tốc số 1859/SYT-NVY ngày 01/04/2022 ...");
 
-        jLabel31.setText("Updated: 02/04/2022  9:00");
+        jLabel31.setText("Updated: 03/04/2022  9:00");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
