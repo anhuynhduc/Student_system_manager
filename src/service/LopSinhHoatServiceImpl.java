@@ -18,5 +18,10 @@ public class LopSinhHoatServiceImpl implements LopSinhHoatService {
     public List<SinhVien> getList() {
         return lopSinhHoatDAO.getList();
     }
+    
+    @Override
+    public int Find(SinhVien hocVien) {
+        return lopSinhHoatDAO.Find(hocVien);
+    }
 
 }

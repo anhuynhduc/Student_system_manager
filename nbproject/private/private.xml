@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/java/Student_system_manager/src/dao/DBConnect.java</file>
-            <file>file:/D:/java/Student_system_manager/src/service/SinhVienServiceImpl.java</file>
+            <file>file:/D:/java/Student_system_manager/src/view/LopSinhHoatJPanel.java</file>
+            <file>file:/D:/java/Student_system_manager/src/dao/LopSinhHoatDAOImpl.java</file>
+            <file>file:/D:/java/Student_system_manager/src/model/SinhVien.java</file>
+            <file>file:/D:/java/Student_system_manager/src/controller/LopSinhHoatController.java</file>
         </group>
     </open-files>
 </project-private>

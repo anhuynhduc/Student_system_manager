@@ -8,5 +8,5 @@ import model.SinhVien;
 public interface LopSinhHoatDAO {
 
     public List<SinhVien> getList();
-  
+    public int Find(SinhVien hocVien);
 }

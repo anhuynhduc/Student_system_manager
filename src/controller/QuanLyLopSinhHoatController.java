@@ -25,13 +25,13 @@ import service.LopSinhHoatService;
 import service.LopSinhHoatServiceImpl;
 import service.SinhVienServiceImpl;
 import utility.ClassTableModel;
+import view.LopSinhHoatJFrame;
 import view.SinhVienJFrame;
 import view.XoaSinhVienJFrame;
 
 public class QuanLyLopSinhHoatController {
     private JPanel jpnView;
     private JButton btnSearch;
-    private JTextField jtfInput;
     private SinhVien hocVien = null;
     
     private LopSinhHoatService lopSinhHoatService = null;
@@ -41,13 +41,13 @@ public class QuanLyLopSinhHoatController {
     
     private TableRowSorter<TableModel> rowSorter = null;
     
-    public QuanLyLopSinhHoatController(JPanel jpnView, JButton btnSearch , JTextField jtfIput) {
+    public QuanLyLopSinhHoatController(JPanel jpnView, JButton btnSearch) {
         this.jpnView = jpnView;
         this.btnSearch = btnSearch;
-        this.jtfInput = jtfInput;
         this.lopSinhHoatService = new LopSinhHoatServiceImpl();
     }
         public void setDataToTable() {
+            
         List<SinhVien> listItem = lopSinhHoatService.getList();
         
         DefaultTableModel model = new ClassTableModel().setTableHocVien(listItem, listColumn);
@@ -106,13 +106,15 @@ public class QuanLyLopSinhHoatController {
         jpnView.repaint();
     }
         public void setEvent(SinhVien hocVien){
-            this.hocVien = hocVien;
-            jtfInput.setText(hocVien.getMa_hoc_vien());
-            
+           
             btnSearch.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
-                
+                LopSinhHoatJFrame frame = new LopSinhHoatJFrame(new SinhVien());
+                frame.setTitle("Thông Tin Sinh Viên");
+                frame.setLocationRelativeTo(null);
+                frame.setResizable(false);
+                frame.setVisible(true);
             }
             @Override
             public void mouseEntered(MouseEvent e) {

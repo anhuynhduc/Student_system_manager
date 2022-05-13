@@ -15,7 +15,7 @@ public class LopSinhHoatDAOImpl implements LopSinhHoatDAO {
     public List<SinhVien> getList() {
         try {
             Connection cons = (Connection) DBConnect.getConnection();
-            String sql =  "SELECT * FROM hoc_vien As s \n where s.ten_lop_hoc='20T2'";
+            String sql =  "SELECT * FROM hoc_vien ";
             List<SinhVien> list = new ArrayList<>();
             PreparedStatement ps = (PreparedStatement) cons.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -39,6 +39,35 @@ public class LopSinhHoatDAOImpl implements LopSinhHoatDAO {
             e.printStackTrace();
         }
         return null;
+    }
+    
+    @Override
+    public int Find(SinhVien hocVien) {
+    try {
+            Connection cons = DBConnect.getConnection();
+            String sql = "SELECT * FROM hoc_vien where ten_lop_hoc like ?" ;
+            PreparedStatement ps = cons.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            ps.setString(1, hocVien.getMa_hoc_vien());
+            ps.setString(2, hocVien.getHo_ten());
+            ps.setString(3, hocVien.getTen_lop_hoc());
+            ps.setDate(4, hocVien.getNgay_sinh());
+            ps.setBoolean(5, hocVien.isGioi_tinh());
+            ps.setString(6, hocVien.getSo_dien_thoai());
+            ps.setString(7, hocVien.getDia_chi());
+            ps.setBoolean(8, hocVien.isTinh_trang());
+            ps.execute();
+            ResultSet rs = ps.getGeneratedKeys();
+            int generatedKey = 0;
+            if (rs.next()) {
+                generatedKey = rs.getInt(1);
+            }
+            ps.close();
+            cons.close();
+            return generatedKey;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return 0;
     }
     
    

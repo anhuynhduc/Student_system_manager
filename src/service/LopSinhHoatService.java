@@ -7,4 +7,6 @@ import model.SinhVien;
 public interface LopSinhHoatService {
     
     public List<SinhVien> getList();
+    
+    public int Find(SinhVien hocVien);
 }
