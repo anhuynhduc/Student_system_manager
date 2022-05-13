@@ -105,7 +105,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Th&#xf4;ng tin h&#x1ecd;c vi&#xea;n">
+                <TitledBorder title="Th&#xf4;ng tin sinh vi&#xea;n">
                   <Font PropertyName="font" name="Arial" size="14" style="1"/>
                 </TitledBorder>
               </Border>
@@ -235,11 +235,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="0"/>
                 </Property>
-<<<<<<< HEAD
-                <Property name="text" type="java.lang.String" value="M&#xe3; sinh vi&#xea;n :"/>
-=======
                 <Property name="text" type="java.lang.String" value="M&#xe3; Sinh Vi&#xea;n :"/>
->>>>>>> d9207ec3b88cf7a8bf52b6b17de696465e9230b3
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jtfMaHocVien">
