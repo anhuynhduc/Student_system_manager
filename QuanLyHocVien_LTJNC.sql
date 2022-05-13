@@ -23,7 +23,7 @@ create table khoa_hoc
 	ten_khoa_hoc nvarchar(50),
 	mo_ta nvarchar(255) ,
 	ngay_bat_dau date ,
-	ngay_ket_thuc date,
+	ngay_ket_thuc datetime,
 	tinh_trang bit
 )
 go
@@ -58,26 +58,32 @@ add constraint CK_SDT_hoc_vien check(so_dien_thoai LIKE '[0-9][0-9][0-9][0-9][0-
 go
 alter table khoa_hoc
 add constraint CK_Date_khoa_hoc CHECK(ngay_bat_dau < ngay_ket_thuc )
+Alter table khoa_hoc
+add constraint CK_khoa_hoc CHECK( ngay_ket_thuc <= getdate )
+
 
 
 go 
 
 INSERT INTO hoc_vien 
 	values('1896251',N'Võ Lê Nhật Huy','20T1','03/16/2002','1','0858998155','Da Nang','1'),
-		  ('1896252',N'Hồ Nguyễn Gia Bảo','20T2','02/14/2002','1','0851451212','Da Nang','1')
+		  ('1896252',N'Hồ Nguyễn Gia Bảo','20T2','02/14/2002','1','0851451212','Da Nang','1'),
+		  ('1896253',N'Lê Văn Hiếu','20T1','06/05/2002,'2',0976603251,'Quảng Nam','1');
 
 GO
 INSERT INTO khoa_hoc
 	values('KH00001','FONT-END',N'Thiết kế giao diện website','04/23/2022','07/23/2022','1'),
-			('KH00002','BACK-END',N'Thiết kế cơ sở dữ liệu','07/23/2022','12/23/2022','0')
+		('KH00002','BACK-END',N'Thiết kế cơ sở dữ liệu','07/23/2022','12/23/2022','0'),
+		('KH00003','BACKGROND',N'Phác họa và vẽ hình nền','05/20/2022','5/27/2022','2');
 go
 INSERT INTO lop_hoc
 	values ('LH00001','20T1','1896251','KH00001','04/20/2022','1'),
-			('LH00002','20T2','1896252','KH00002','06/29/2022','0')
+		('LH00002','20T2','1896252','KH00002','06/29/2022','0')
+		('LH00003','20T1','1896253','KH00003','05/29/2022','2')
 			
 go 
 INSERT INTO tai_khoan
-	values('16032002','nhathuy1630','nhathuy1603','1')
-
+	values('16032002','nhathuy1630','nhathuy1603','1'),
+               ('6052002','vanhieu6502','vanhieu06051603','2');
 select *
 from tai_khoan
