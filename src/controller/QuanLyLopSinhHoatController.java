@@ -25,13 +25,12 @@ import service.LopSinhHoatService;
 import service.LopSinhHoatServiceImpl;
 import service.SinhVienServiceImpl;
 import utility.ClassTableModel;
-import view.LopSinhHoatJFrame;
 import view.SinhVienJFrame;
 import view.XoaSinhVienJFrame;
 
 public class QuanLyLopSinhHoatController {
     private JPanel jpnView;
-    private JButton btnSearch;
+    private JTextField jtfSearch;
     private SinhVien hocVien = null;
     
     private LopSinhHoatService lopSinhHoatService = null;
@@ -41,9 +40,9 @@ public class QuanLyLopSinhHoatController {
     
     private TableRowSorter<TableModel> rowSorter = null;
     
-    public QuanLyLopSinhHoatController(JPanel jpnView, JButton btnSearch) {
+    public QuanLyLopSinhHoatController(JPanel jpnView, JTextField jtfSearch) {
         this.jpnView = jpnView;
-        this.btnSearch = btnSearch;
+        this.jtfSearch = jtfSearch;
         this.lopSinhHoatService = new LopSinhHoatServiceImpl();
     }
         public void setDataToTable() {
@@ -55,6 +54,33 @@ public class QuanLyLopSinhHoatController {
 
         rowSorter = new TableRowSorter<>(table.getModel());
         table.setRowSorter(rowSorter);
+        
+        jtfSearch.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                String text = jtfSearch.getText();
+                if (text.trim().length() == 0) {
+                    rowSorter.setRowFilter(null);
+                } else {
+                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
+                }
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                 String text = jtfSearch.getText();
+                if (text.trim().length() == 0) {
+                    rowSorter.setRowFilter(null);
+                } else {
+                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
+                }
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                
+            }
+            });
         
         // design
         table.getColumnModel().getColumn(0).setMinWidth(0);
@@ -105,27 +131,4 @@ public class QuanLyLopSinhHoatController {
         jpnView.validate();
         jpnView.repaint();
     }
-        public void setEvent(SinhVien hocVien){
-           
-            btnSearch.addMouseListener(new MouseAdapter(){
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                LopSinhHoatJFrame frame = new LopSinhHoatJFrame(new SinhVien());
-                frame.setTitle("Thông Tin Sinh Viên");
-                frame.setLocationRelativeTo(null);
-                frame.setResizable(false);
-                frame.setVisible(true);
-            }
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                btnSearch.setBackground(new Color(0, 200, 83));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                btnSearch.setBackground(new Color(100, 221, 23));
-            }
-        });
-        
-}
 }
