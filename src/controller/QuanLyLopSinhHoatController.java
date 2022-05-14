@@ -21,33 +21,33 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import model.SinhVien;
+import service.LopSinhHoatService;
+import service.LopSinhHoatServiceImpl;
 import service.SinhVienServiceImpl;
 import utility.ClassTableModel;
 import view.SinhVienJFrame;
-import service.SinhVienService;
 import view.XoaSinhVienJFrame;
 
-public class QuanLySinhVienController {
+public class QuanLyLopSinhHoatController {
     private JPanel jpnView;
-    private JButton btnAdd;
     private JTextField jtfSearch;
+    private SinhVien hocVien = null;
     
-    private SinhVienService hocVienService = null;
+    private LopSinhHoatService lopSinhHoatService = null;
     
     private String[] listColumn = {"STT", "MSV", "Tên Sinh Viên","Tên Lớp Học", "Ngày sinh",
         "Giới tính", "Số điện thoại", "Địa chỉ", "Trạng thái"};
     
     private TableRowSorter<TableModel> rowSorter = null;
     
-    public QuanLySinhVienController(JPanel jpnView, JButton btnAdd , JTextField jtfSearch) {
+    public QuanLyLopSinhHoatController(JPanel jpnView, JTextField jtfSearch) {
         this.jpnView = jpnView;
-        this.btnAdd = btnAdd;
         this.jtfSearch = jtfSearch;
-        this.hocVienService = new SinhVienServiceImpl();
+        this.lopSinhHoatService = new LopSinhHoatServiceImpl();
     }
-    
-    public void setDataToTable() {
-        List<SinhVien> listItem = hocVienService.getList();
+        public void setDataToTable() {
+            
+        List<SinhVien> listItem = lopSinhHoatService.getList();
         
         DefaultTableModel model = new ClassTableModel().setTableHocVien(listItem, listColumn);
         JTable table = new JTable(model);
@@ -81,6 +81,7 @@ public class QuanLySinhVienController {
                 
             }
             });
+        
         // design
         table.getColumnModel().getColumn(0).setMinWidth(0);
         table.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -111,18 +112,6 @@ public class QuanLySinhVienController {
                           model.getValueAt(selectedRowIndex, 7).toString() : "");
                   hocVien.setTinh_trang((Boolean) model.getValueAt(selectedRowIndex,8));
                   
-                  SinhVienJFrame frame = new SinhVienJFrame(hocVien);
-                  frame.setTitle("Thông tin học viên");
-                  frame.setResizable(false);
-                  frame.setLocationRelativeTo(null);
-                  frame.setVisible(true);
-                  
-                  XoaSinhVienJFrame frame1 = new XoaSinhVienJFrame(hocVien);
-                  frame1.setTitle("Thông tin học viên Cần Xoá");
-                  frame1.setResizable(false);
-                  frame1.setLocationRelativeTo(null);
-                  frame1.setVisible(true);
-                  
               }
         }    
         });
@@ -142,28 +131,4 @@ public class QuanLySinhVienController {
         jpnView.validate();
         jpnView.repaint();
     }
-        
-        public void setEvent(){
-            btnAdd.addMouseListener(new MouseAdapter(){
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                SinhVienJFrame frame = new SinhVienJFrame(new SinhVien());
-                frame.setTitle("Thông Tin Sinh Viên");
-                frame.setLocationRelativeTo(null);
-                frame.setResizable(false);
-                frame.setVisible(true);
-            }
-            
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                btnAdd.setBackground(new Color(0, 200, 83));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                btnAdd.setBackground(new Color(100, 221, 23));
-            }
-        });
-        
-}
 }

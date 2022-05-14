@@ -9,4 +9,6 @@ public interface SinhVienService {
     public List<SinhVien> getList();
     
     public int createOrUpdate(SinhVien hocVien);
+
+    public int deleteOrUpdate(SinhVien hocVien);
 }
