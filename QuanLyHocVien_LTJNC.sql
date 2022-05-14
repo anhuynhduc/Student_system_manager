@@ -1,8 +1,8 @@
-﻿create database db_qlhv
+﻿create database db_qlhv1
 
 go
 
-use db_qlhv 
+use db_qlhv1
 go
 create table hoc_vien
 (
@@ -38,6 +38,37 @@ create table lop_hoc
 	
 )
 go 
+create table lop_sinh_hoat
+(
+	ma_lop_hoc varchar(7) NOT NULL primary key,
+	ten_lop_hoc nvarchar(50),
+	giao_vien_chu_nhiem nvarchar(50),
+	so_luong_sinh_vien int
+)
+go
+
+create table bang_diem
+(
+	ma_hoc_vien varchar(7) ,
+	ho_ten_hoc_vien nvarchar(50),
+	hoc_ki varchar(3),
+	diem_TBCHT float,
+	xep_loai varchar(3)
+)
+go
+
+create table thoi_khoa_bieu
+(
+	ma_hoc_vien varchar(7),
+	ten_lop_hoc_phan varchar(50),
+	ten_mon_hoc nvarchar(50),
+	thu int ,
+	tu_tiet int,
+	den_tiet int,
+	ten_giang_vien nvarchar(50),
+	phong varchar(10)
+)
+go
 create table tai_khoan
 (
 	 ma_tai_khoan int NOT NULL primary key,
@@ -58,17 +89,15 @@ add constraint CK_SDT_hoc_vien check(so_dien_thoai LIKE '[0-9][0-9][0-9][0-9][0-
 go
 alter table khoa_hoc
 add constraint CK_Date_khoa_hoc CHECK(ngay_bat_dau < ngay_ket_thuc )
-Alter table khoa_hoc
-add constraint CK_khoa_hoc CHECK( ngay_ket_thuc <= getdate )
-
-
-
-go 
 
 INSERT INTO hoc_vien 
-	values('1896251',N'Võ Lê Nhật Huy','20T1','03/16/2002','1','0858998155','Da Nang','1'),
-		  ('1896252',N'Hồ Nguyễn Gia Bảo','20T2','02/14/2002','1','0851451212','Da Nang','1'),
-		  ('1896253',N'Lê Văn Hiếu','20T1','06/05/2002,'2',0976603251,'Quảng Nam','1');
+	values('1896251',N'Võ Lê Nhật Huy','20T2','03/16/2002','1','0858998155','Da Nang','1'),
+		  ('1896252',N'Hồ Nguyễn Gia Bảo','20T1','02/14/2002','1','0851451212','Da Nang','1'),
+		 ('1896253',N'Huỳnh Đức An','20T2','05/05/2002','1','0858995235','Quang Nam','1'),
+		  ('1896254',N'Huỳnh Ngọc Đạt','20T1','10/2/2002','1','0851451212','Da Nang','0'),
+		  ('1896255',N'Võ Lê Nhật Linh','20T3','03/26/2002','0','0856566335','Thua Thien Hue','1'),
+		  ('1896256',N'Hồ Thùy Tiên','20T3','02/14/2002','0','0851451412','Gia Lai','1')
+
 
 GO
 INSERT INTO khoa_hoc
@@ -79,11 +108,7 @@ go
 INSERT INTO lop_hoc
 	values ('LH00001','20T1','1896251','KH00001','04/20/2022','1'),
 		('LH00002','20T2','1896252','KH00002','06/29/2022','0')
-		('LH00003','20T1','1896253','KH00003','05/29/2022','2')
 			
 go 
 INSERT INTO tai_khoan
-	values('16032002','nhathuy1630','nhathuy1603','1'),
-               ('6052002','vanhieu6502','vanhieu06051603','2');
-select *
-from tai_khoan
+	values('16032002','nhathuy1630','nhathuy1603','1')
