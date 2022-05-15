@@ -4,6 +4,7 @@ package service;
 import dao.LopSinhHoatDAOImpl;
 import java.util.List;
 import model.SinhVien;
+import model.LopSinhHoat;
 import dao.LopSinhHoatDAO;
 
 public class LopSinhHoatServiceImpl implements LopSinhHoatService {
@@ -15,7 +16,7 @@ public class LopSinhHoatServiceImpl implements LopSinhHoatService {
     }
 
     @Override
-    public List<SinhVien> getList() {
+    public List<LopSinhHoat> getList() {
         return lopSinhHoatDAO.getList();
     }
 

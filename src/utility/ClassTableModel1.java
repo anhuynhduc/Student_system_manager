@@ -4,10 +4,11 @@ package utility;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.LopSinhHoat;
+import model.SinhVien;
 
 
 public class ClassTableModel1 {
-    public DefaultTableModel setTableLopSinhHoat(List<LopSinhHoat> listItem, String[] listColumn) {
+    public DefaultTableModel setTableHocVien(List<LopSinhHoat> listItem, String[] listColumn) {
         DefaultTableModel dtm = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -15,7 +16,7 @@ public class ClassTableModel1 {
             }
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                return columnIndex == 4 ? Boolean.class : String.class;
+                return columnIndex == 8 ? Boolean.class : String.class;
             }
         };
     
@@ -32,12 +33,10 @@ public class ClassTableModel1 {
             obj[2] = lopSinhHoat.getTen_lop_hoc();
             obj[3] = lopSinhHoat.getGiao_vien_chu_nhiem();
             obj[4] = lopSinhHoat.getSo_luong_sinh_vien();
-            
             dtm.addRow(obj);
         }
         }
          return dtm;
 }
-
     
 }

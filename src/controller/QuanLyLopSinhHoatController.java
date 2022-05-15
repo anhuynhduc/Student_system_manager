@@ -20,11 +20,13 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import model.LopSinhHoat;
 import model.SinhVien;
 import service.LopSinhHoatService;
 import service.LopSinhHoatServiceImpl;
 import service.SinhVienServiceImpl;
 import utility.ClassTableModel;
+import utility.ClassTableModel1;
 import view.SinhVienJFrame;
 import view.XoaSinhVienJFrame;
 
@@ -35,8 +37,8 @@ public class QuanLyLopSinhHoatController {
     
     private LopSinhHoatService lopSinhHoatService = null;
     
-    private String[] listColumn = {"STT", "MSV", "Tên Sinh Viên","Tên Lớp Học", "Ngày sinh",
-        "Giới tính", "Số điện thoại", "Địa chỉ", "Trạng thái"};
+    private String[] listColumn = {"STT", "MLSH", "Tên Lớp Học","Giáo viên chủ nhiệm", "Số lượng sinh viên",
+       };
     
     private TableRowSorter<TableModel> rowSorter = null;
     
@@ -47,9 +49,9 @@ public class QuanLyLopSinhHoatController {
     }
         public void setDataToTable() {
             
-        List<SinhVien> listItem = lopSinhHoatService.getList();
+        List<LopSinhHoat> listItem = lopSinhHoatService.getList();
         
-        DefaultTableModel model = new ClassTableModel().setTableHocVien(listItem, listColumn);
+        DefaultTableModel model = new ClassTableModel1().setTableHocVien(listItem, listColumn);
         JTable table = new JTable(model);
 
         rowSorter = new TableRowSorter<>(table.getModel());
@@ -100,17 +102,11 @@ public class QuanLyLopSinhHoatController {
                   selectedRowIndex = table.convertRowIndexToModel(selectedRowIndex);
                   System.out.println(selectedRowIndex);
                   
-                  SinhVien hocVien = new SinhVien();
-                  hocVien.setMa_hoc_vien((String) model.getValueAt(selectedRowIndex,1)) ;
-                  hocVien.setHo_ten(model.getValueAt(selectedRowIndex,2).toString());
-                  hocVien.setTen_lop_hoc(model.getValueAt(selectedRowIndex,3).toString());
-                  //hocVien.setNgay_sinh(ngay_sinh);
-                  hocVien.setGioi_tinh(model.getValueAt(selectedRowIndex,5).toString().equalsIgnoreCase("Nam"));
-                  hocVien.setSo_dien_thoai(model.getValueAt(selectedRowIndex,6) != null ?
-                          model.getValueAt(selectedRowIndex, 6).toString() : "");
-                  hocVien.setDia_chi(model.getValueAt(selectedRowIndex,7).toString() != null ?
-                          model.getValueAt(selectedRowIndex, 7).toString() : "");
-                  hocVien.setTinh_trang((Boolean) model.getValueAt(selectedRowIndex,8));
+                  LopSinhHoat hocVien = new LopSinhHoat();
+                  hocVien.setMa_lop_hoc((String) model.getValueAt(selectedRowIndex,1)) ;
+                  hocVien.setTen_lop_hoc(model.getValueAt(selectedRowIndex,2).toString());
+                  hocVien.setGiao_vien_chu_nhiem(model.getValueAt(selectedRowIndex,3).toString());
+                  hocVien.setSo_luong_sinh_vien(model.getValueAt(selectedRowIndex,5).toString());
                   
               }
         }    
@@ -124,7 +120,7 @@ public class QuanLyLopSinhHoatController {
         
         JScrollPane scroll = new JScrollPane();
         scroll.getViewport().add(table);
-        scroll.setPreferredSize(new Dimension(1350, 400));
+        scroll.setPreferredSize(new Dimension(1050, 400));
         jpnView.removeAll();
         jpnView.setLayout(new CardLayout());
         jpnView.add(scroll);

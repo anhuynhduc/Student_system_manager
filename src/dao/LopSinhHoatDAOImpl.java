@@ -8,27 +8,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import model.SinhVien;
+import model.LopSinhHoat;
 
 public class LopSinhHoatDAOImpl implements LopSinhHoatDAO {
 
     @Override
-    public List<SinhVien> getList() {
+    public List<LopSinhHoat> getList() {
         try {
             Connection cons = (Connection) DBConnect.getConnection();
-            String sql =  "SELECT * FROM hoc_vien ";
-            List<SinhVien> list = new ArrayList<>();
+            String sql =  "SELECT * FROM lop_sinh_hoat ";
+            List<LopSinhHoat> list = new ArrayList<>();
             PreparedStatement ps = (PreparedStatement) cons.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                SinhVien hocVien = new SinhVien();
-                hocVien.setMa_hoc_vien(rs.getString("ma_hoc_vien"));
-                hocVien.setHo_ten(rs.getString("ho_ten"));
+                LopSinhHoat hocVien = new LopSinhHoat();
+                hocVien.setMa_lop_hoc(rs.getString("ma_lop_hoc"));
                 hocVien.setTen_lop_hoc(rs.getString("ten_lop_hoc"));
-                hocVien.setSo_dien_thoai(rs.getString("so_dien_thoai"));
-                hocVien.setDia_chi(rs.getString("dia_chi"));
-                hocVien.setNgay_sinh(rs.getDate("ngay_sinh"));
-                hocVien.setGioi_tinh(rs.getBoolean("gioi_tinh"));
-                hocVien.setTinh_trang(rs.getBoolean("tinh_trang"));
+                hocVien.setGiao_vien_chu_nhiem(rs.getString("giao_vien_chu_nhiem"));
+                hocVien.setSo_luong_sinh_vien(rs.getString("so_luong_sinh_vien"));
                 list.add(hocVien);
             }
             ps.close();
