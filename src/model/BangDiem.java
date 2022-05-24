@@ -39,7 +39,7 @@ public class BangDiem implements Serializable {
         return diem_TBCHT;
     }
 
-    public void setSo_luong_sinh_vien(String diem_TBCHT) {
+    public void setDiem_TBCHT(String diem_TBCHT) {
         this.diem_TBCHT = diem_TBCHT;
     }
     

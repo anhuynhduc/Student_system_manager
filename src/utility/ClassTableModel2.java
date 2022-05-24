@@ -3,12 +3,11 @@ package utility;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import model.LopSinhHoat;
-import model.SinhVien;
+import model.BangDiem;
 
 
-public class ClassTableModel1 {
-    public DefaultTableModel setTableHocVien(List<LopSinhHoat> listItem, String[] listColumn) {
+public class ClassTableModel2 {
+    public DefaultTableModel setTableHocVien(List<BangDiem> listItem, String[] listColumn) {
         DefaultTableModel dtm = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -16,7 +15,7 @@ public class ClassTableModel1 {
             }
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                return columnIndex == 5 ? Boolean.class : String.class;
+                return columnIndex == 6 ? Boolean.class : String.class;
             }
         };
     
@@ -26,13 +25,14 @@ public class ClassTableModel1 {
         int rows = listItem.size();
         if(rows > 0){
             for (int i = 0; i < rows; i++) {
-            LopSinhHoat lopSinhHoat = listItem.get(i);
+            BangDiem bangDiem = listItem.get(i);
             obj = new Object[columns];
             obj[0] = (i + 1);
-            obj[1] = lopSinhHoat.getMa_lop_hoc();
-            obj[2] = lopSinhHoat.getTen_lop_hoc();
-            obj[3] = lopSinhHoat.getGiao_vien_chu_nhiem();
-            obj[4] = lopSinhHoat.getSo_luong_sinh_vien();
+            obj[1] = bangDiem.getMa_hoc_vien();
+            obj[2] = bangDiem.getHo_ten_hoc_vien();
+            obj[3] = bangDiem.getHoc_ki();
+            obj[4] = bangDiem.getDiem_TBCHT();
+            obj[5] = bangDiem.getXep_loai();
             dtm.addRow(obj);
         }
         }
