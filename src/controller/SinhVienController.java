@@ -75,7 +75,7 @@ public class SinhVienController {
     
     public void setView(SinhVien hocVien) {
         this.hocVien = hocVien;
-        jtfMaHocVien.setText("#" + hocVien.getMa_hoc_vien());
+        jtfMaHocVien.setText(hocVien.getMa_hoc_vien());
         jtfHoTen.setText(hocVien.getHo_ten());
         jtfTenLopHoc.setText(hocVien.getTen_lop_hoc());
         jdcNgaySinh.setDate(hocVien.getNgay_sinh());
