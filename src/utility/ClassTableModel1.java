@@ -7,8 +7,8 @@ import model.LopSinhHoat;
 import model.SinhVien;
 
 
-public class ClassTableModel {
-    public DefaultTableModel setTableHocVien(List<SinhVien> listItem, String[] listColumn) {
+public class ClassTableModel1 {
+    public DefaultTableModel setTableHocVien(List<LopSinhHoat> listItem, String[] listColumn) {
         DefaultTableModel dtm = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -26,26 +26,17 @@ public class ClassTableModel {
         int rows = listItem.size();
         if(rows > 0){
             for (int i = 0; i < rows; i++) {
-            SinhVien hocVien = listItem.get(i);
+            LopSinhHoat lopSinhHoat = listItem.get(i);
             obj = new Object[columns];
             obj[0] = (i + 1);
-            obj[1] = hocVien.getMa_hoc_vien();
-            obj[2] = hocVien.getHo_ten();
-            obj[3] = hocVien.getTen_lop_hoc();
-            obj[4] = hocVien.getNgay_sinh();
-            obj[5] = hocVien.isGioi_tinh() == true ? "Nam" : "Nữ";
-            obj[6] = hocVien.getSo_dien_thoai();
-            obj[7] = hocVien.getDia_chi();
-            obj[8] = hocVien.isTinh_trang();
+            obj[1] = lopSinhHoat.getMa_lop_hoc();
+            obj[2] = lopSinhHoat.getTen_lop_hoc();
+            obj[3] = lopSinhHoat.getGiao_vien_chu_nhiem();
+            obj[4] = lopSinhHoat.getSo_luong_sinh_vien();
             dtm.addRow(obj);
         }
         }
          return dtm;
 }
-
-    public DefaultTableModel setTableLopSinhHoat(List<LopSinhHoat> listItem, String[] listColumn) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     
 }
