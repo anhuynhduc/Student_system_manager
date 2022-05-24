@@ -36,7 +36,7 @@ public class QuanLyBangDiemController {
     
     private BangDiemService bangDiemService = null;
     
-    private String[] listColumn = {"STT", "Mã sinh viên", "Tên sinh viên","Học kì", "Điểm trung cả kì","Xếp loại"
+    private String[] listColumn = {"STT", "MSV", "Tên sinh viên","Học kì", "Điểm trung cả kì","Xếp loại"
        };
     
     private TableRowSorter<TableModel> rowSorter = null;

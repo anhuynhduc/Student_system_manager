@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.QuanLyLopSinhHoatController ;
+import controller.QuanLyBangDiemController ;
 import model.SinhVien;
 
 /**
@@ -18,7 +18,7 @@ public class BangDiemJPanel extends javax.swing.JPanel {
      */
     public BangDiemJPanel() {
         initComponents();
-        QuanLyLopSinhHoatController controller = new QuanLyLopSinhHoatController(jpnView, jtfSearch);
+        QuanLyBangDiemController controller = new QuanLyBangDiemController(jpnView, jtfSearch);
         controller.setDataToTable();
         
     }
