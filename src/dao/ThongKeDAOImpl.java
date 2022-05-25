@@ -36,26 +36,9 @@ public class ThongKeDAOImpl implements ThongKeDAO{
         }
         return null;
     }
-    
-     @Override
+
+    @Override
     public List<KhoaHocBean> getListByKhoaHoc() {
-        try {
-        Connection cons = (Connection) DBConnect.getConnection();
-        String sql = "SELECT ten_khoa_hoc, ngay_bat_dau, ngay_ket_thuc FROM khoa_hoc WHERE tinh_trang = TRUE";
-        List<KhoaHocBean> list = new ArrayList<>();
-        PreparedStatement ps = cons.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                KhoaHocBean khoaHocBean = new KhoaHocBean();
-                KhoaHocBean.setTenKhoaHoc(rs.getString("ten_khoa_hoc"));
-                KhoaHocBean.setNgayBatDau(rs.getString("ngay_bat_dau"));
-                KhoaHocBean.setNgayKetThuc(rs.getString("ngay_ket_thuc"));
-                list.add(khoaHocBean);
-            }
-            return list;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return null;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
