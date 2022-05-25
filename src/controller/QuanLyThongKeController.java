@@ -53,36 +53,4 @@ public class QuanLyThongKeController {
         jpnItem.repaint();
         }
     }
-    
-    
-    public void setDataToChart2(JPanel jpnItem) {
-        List<KhoaHocBean> listItem = thongKeService.getListByKhoaHoc();
-  
-        if (listItem != null) {
-            TaskSeriesCollection ds = new TaskSeriesCollection();
-            TaskSeries taskSeries;
-            Task task;
-
-            for (KhoaHocBean item : listItem) {
-                taskSeries = new TaskSeries(item.getTen_khoa_hoc());
-                task = new Task(item.getTen_khoa_hoc(), new SimpleTimePeriod(item.getNgay_bat_dau(), item.getNgay_ket_thuc()));
-                taskSeries.add(task);
-                ds.add(taskSeries);
-            }
-        
-           
-        JFreeChart chart = ChartFactory.createGanttChart(
-                "BIỂU ĐỒ THEO DÕI TÌNH TRẠNG KHÓA HỌC",
-                "Khóa học", "Thời gian", ds);
-        
-        ChartPanel chartPanel = new ChartPanel(chart);
-        chartPanel.setPreferredSize(new Dimension(jpnItem.getWidth(), 300));
-
-        jpnItem.removeAll();
-        jpnItem.setLayout(new CardLayout());
-        jpnItem.add(chartPanel);
-        jpnItem.validate();
-        jpnItem.repaint();
-    }
-    }
 }

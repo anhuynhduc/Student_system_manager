@@ -9,7 +9,7 @@ public class SinhVienJPanel extends javax.swing.JPanel {
   
     public SinhVienJPanel() {
         initComponents();
-        QuanLySinhVienController controller = new QuanLySinhVienController(jpnView, btnAdd, jtfSearch);
+        QuanLySinhVienController controller = new QuanLySinhVienController(jpnView, btnAdd ,jtfSearch);
         controller.setDataToTable();
         controller.setEvent();
     }
@@ -43,7 +43,7 @@ public class SinhVienJPanel extends javax.swing.JPanel {
         );
         jpnViewLayout.setVerticalGroup(
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 472, Short.MAX_VALUE)
+            .addGap(0, 540, Short.MAX_VALUE)
         );
 
         jPanel1.setBackground(new java.awt.Color(0, 82, 122));
@@ -60,7 +60,7 @@ public class SinhVienJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(231, 231, 231)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +102,7 @@ public class SinhVienJPanel extends javax.swing.JPanel {
                     .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jpnRootLayout.createSequentialGroup()
                         .addComponent(jtfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 543, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -117,7 +117,8 @@ public class SinhVienJPanel extends javax.swing.JPanel {
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jpnView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jpnView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

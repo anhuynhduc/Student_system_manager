@@ -3,6 +3,7 @@ package utility;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import model.LopSinhHoat;
 import model.SinhVien;
 
 
@@ -41,6 +42,10 @@ public class ClassTableModel {
         }
          return dtm;
 }
+
+    public DefaultTableModel setTableLopSinhHoat(List<LopSinhHoat> listItem, String[] listColumn) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     
 }

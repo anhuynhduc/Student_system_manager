@@ -13,7 +13,6 @@ public class ThongKeJPanel extends javax.swing.JPanel {
         initComponents();
         QuanLyThongKeController controller = new QuanLyThongKeController();
         controller.setDataToChart1(jpnView1);
-        controller.setDataToChart2(jpnView2);
     }
 
     
@@ -23,7 +22,6 @@ public class ThongKeJPanel extends javax.swing.JPanel {
 
         jpnRoot = new javax.swing.JPanel();
         jpnView1 = new javax.swing.JPanel();
-        jpnView2 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jpnView1Layout = new javax.swing.GroupLayout(jpnView1);
         jpnView1.setLayout(jpnView1Layout);
@@ -33,18 +31,7 @@ public class ThongKeJPanel extends javax.swing.JPanel {
         );
         jpnView1Layout.setVerticalGroup(
             jpnView1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 221, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jpnView2Layout = new javax.swing.GroupLayout(jpnView2);
-        jpnView2.setLayout(jpnView2Layout);
-        jpnView2Layout.setHorizontalGroup(
-            jpnView2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpnView2Layout.setVerticalGroup(
-            jpnView2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 235, Short.MAX_VALUE)
+            .addGap(0, 474, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jpnRootLayout = new javax.swing.GroupLayout(jpnRoot);
@@ -53,18 +40,14 @@ public class ThongKeJPanel extends javax.swing.JPanel {
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnRootLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpnView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpnView2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpnView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jpnRootLayout.setVerticalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnRootLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpnView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jpnView2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpnView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -84,7 +67,6 @@ public class ThongKeJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jpnRoot;
     private javax.swing.JPanel jpnView1;
-    private javax.swing.JPanel jpnView2;
     // End of variables declaration//GEN-END:variables
     
 }
