@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.BangDiemJPanel;
 import view.SinhVienJPanel;
-import view.KhoaHocJPanel;
 import view.LopSinhHoatJPanel;
 import view.ThoiKhoaBieuJPanel;
 import view.ThongKeJPanel;

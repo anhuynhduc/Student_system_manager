@@ -12,7 +12,7 @@ public class DBConnect {
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
             cons = DriverManager.getConnection(
-                    "jdbc:jtds:sqlserver://ADMIN/db_qlhv1;instance=SQLEXPRESS;user=sa;password=123456");
+                    "jdbc:jtds:sqlserver://DESKTOP-5K3GMSS/db_qlhv1;instance=SQLEXPRESS;user=sa;password=123456");
         } catch (Exception e) {
             e.printStackTrace();
         }

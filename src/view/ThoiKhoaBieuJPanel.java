@@ -118,7 +118,7 @@ public class ThoiKhoaBieuJPanel extends javax.swing.JPanel {
         });
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel16.setText("Mã sinh viên");
+        jLabel16.setText("Tìm kiếm");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
