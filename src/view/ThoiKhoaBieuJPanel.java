@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.QuanLyBangDiemController ;
+import controller.QuanLyThoiKhoaBieuController ;
 import model.SinhVien;
 
 /**
@@ -18,7 +18,7 @@ public class ThoiKhoaBieuJPanel extends javax.swing.JPanel {
      */
     public ThoiKhoaBieuJPanel() {
         initComponents();
-        QuanLyBangDiemController controller = new QuanLyBangDiemController(jpnView, jtfSearch);
+        QuanLyThoiKhoaBieuController controller = new QuanLyThoiKhoaBieuController(jpnView, jtfSearch);
         controller.setDataToTable();
         
     }
