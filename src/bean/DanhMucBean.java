@@ -21,7 +21,7 @@ public class DanhMucBean {
     }
 
     public String getKind() {
-        return kind;
+        return kind;// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public void setKind(String kind) {
