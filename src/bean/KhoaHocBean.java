@@ -25,7 +25,7 @@ public class KhoaHocBean {
     }
 
     public void setTen_khoa_hoc(String ten_khoa_hoc) {
-        this.ten_khoa_hoc = ten_khoa_hoc;
+        this.ten_khoa_hoc = ten_khoa_hoc;// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public Date getNgay_bat_dau() {
@@ -41,6 +41,6 @@ public class KhoaHocBean {
     }
 
     public void setNgay_ket_thuc(Date ngay_ket_thuc) {
-        this.ngay_ket_thuc = ngay_ket_thuc;
+        this.ngay_ket_thuc = ngay_ket_thuc;// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
