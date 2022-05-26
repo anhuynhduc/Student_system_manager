@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author Admin
+ * 
  */
 public class ThongKeDAOImpl implements ThongKeDAO{
 
