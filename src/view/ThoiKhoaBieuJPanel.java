@@ -4,10 +4,6 @@
  */
 package view;
 
-/**
- *
- * @author Admin
- */
 public class ThoiKhoaBieuJPanel extends javax.swing.JPanel {
 
     /**
