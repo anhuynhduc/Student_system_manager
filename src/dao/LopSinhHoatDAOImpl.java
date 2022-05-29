@@ -13,6 +13,7 @@ import model.LopSinhHoat;
 public class LopSinhHoatDAOImpl implements LopSinhHoatDAO {
 
     @Override
+    //
     public List<LopSinhHoat> getList() {
         try {
             Connection cons = (Connection) DBConnect.getConnection();
