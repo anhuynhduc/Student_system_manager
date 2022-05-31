@@ -53,7 +53,7 @@ public class SinhVienDAOImpl implements SinhVienDAO {
 "UPDATE SET ma_hoc_vien=s.ma_hoc_vien, ho_ten=s.ho_ten, ten_lop_hoc=s.ten_lop_hoc, ngay_sinh=s.ngay_sinh, gioi_tinh=s.gioi_tinh, so_dien_thoai=s.so_dien_thoai, dia_chi=s.dia_chi, tinh_trang=s.tinh_trang\n" +
 "WHEN NOT MATCHED THEN\n" +
 "INSERT(ma_hoc_vien, ho_ten, ten_lop_hoc, ngay_sinh, gioi_tinh, so_dien_thoai, dia_chi, tinh_trang)\n" +
-"VALUES('2345678', s.ho_ten, s.ten_lop_hoc, s.ngay_sinh, s.gioi_tinh, s.so_dien_thoai, s.dia_chi, s.tinh_trang);";
+"VALUES('1896256', s.ho_ten, s.ten_lop_hoc, s.ngay_sinh, s.gioi_tinh, s.so_dien_thoai, s.dia_chi, s.tinh_trang);";
             PreparedStatement ps = cons.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1, hocVien.getMa_hoc_vien());
             ps.setString(2, hocVien.getHo_ten());

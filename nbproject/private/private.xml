@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Java/Student_system_manager/src/main/Main.java</file>
-            <file>file:/D:/Java/Student_system_manager/src/dao/SinhVienDAO.java</file>
-            <file>file:/D:/Java/Student_system_manager/src/dao/ThongKeDAOImpl.java</file>
-            <file>file:/D:/Java/Student_system_manager/src/dao/BangDiemDAO.java</file>
-            <file>file:/D:/Java/Student_system_manager/src/dao/DBConnect.java</file>
-            <file>file:/D:/Java/Student_system_manager/src/dao/ThongKeDAO.java</file>
+            <file>file:/D:/HocTap/Java-Netbean/Student_system_manager/src/dao/SinhVienDAOImpl.java</file>
+            <file>file:/D:/HocTap/Java-Netbean/Student_system_manager/src/view/ThoiKhoaBieuJPanel.java</file>
+            <file>file:/D:/HocTap/Java-Netbean/Student_system_manager/src/view/SinhVienJPanel.java</file>
+            <file>file:/D:/HocTap/Java-Netbean/Student_system_manager/src/view/SinhVienJFrame.java</file>
+            <file>file:/D:/HocTap/Java-Netbean/Student_system_manager/src/view/TrangChuJPanel.java</file>
+            <file>file:/D:/HocTap/Java-Netbean/Student_system_manager/src/view/XoaSinhVienJFrame.java</file>
+            <file>file:/D:/HocTap/Java-Netbean/Student_system_manager/src/view/ThongKeJPanel.java</file>
         </group>
     </open-files>
 </project-private>
